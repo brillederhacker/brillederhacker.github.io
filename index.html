@@ -13,15 +13,15 @@
 <p>
     Benutzername: <input id="username" type="text" placeholder="Dein Spitzname">      </p>
 
-    <p>Eingelogt bleiben: <input type="checkbox"checked></p>
+    <p>Eingelogt bleiben: <input id="rememberMe" type="checkbox"checked></p>
 
-    <p>Unter 18: <input type="radio"name="age"value="u18"></p>
+    <p>Unter 18: <input type="radio" name="age" value="Unter 18"></p>
 
-    <p>Über  18: <input type="radio" name="age" value="o18"></p>
+    <p>Über  18: <input type="radio" name="age" value="Über 18"></p>
 
      <p>
      Lieblingsessen:
-        <select>
+        <select id="favouriteFood">
 
             <option>Steak</option>
             <option>Pizza</option>
@@ -56,7 +56,14 @@
         var button =$("#button");
         button.click(function (event) {
             var usernameField =$("#username");
-            alert(usernameField.val())
+            var favouriteFood =$("#favouriteFood option:selected").text();
+            var age =$("input[name='age']:checked").val();
+            var username = usernameField.val();
+
+
+            alert("Dein username ist: "+username+"\n"+
+                  "Dein Lieblingsessen ist : "+favouriteFood+"\n"+
+                    "Dein Alter ist : "+age);
             return false;
         })
     });
