@@ -11,7 +11,7 @@
 
 <form>
 <p>
-    Benutzername: <input type="text" placeholder="Dein Spitzname">      </p>
+    Benutzername: <input id="username" type="text" placeholder="Dein Spitzname">      </p>
 
     <p>Eingelogt bleiben: <input type="checkbox"checked></p>
 
@@ -37,7 +37,7 @@
 
      <p>Findest du die Seite gut?Wenn ja,dann drück den Knopf</p>
 
-     <p><input type="submit" value="LOL ROFL"></p>
+     <p><input id="button" type="button" value="LOL ROFL"></p>
 
 
 
@@ -48,6 +48,21 @@
         src="https://code.jquery.com/jquery-3.2.1.slim.js"
         integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg="
         crossorigin="anonymous"></script>
+
+<script>
+
+
+    $( document ).ready(function() {
+        var button =$("#button");
+        button.click(function (event) {
+            var usernameField =$("#username");
+            alert(usernameField.val())
+
+        })
+    });
+
+
+</script>
 
 
 </body>
